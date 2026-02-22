@@ -106,17 +106,16 @@ export const JobPostings = () => {
     };
     const { data: created } = await api.post("/jobs", jobPayload);
     setJobs([...jobs, created]);
-      setNewJob({
-        title: "",
-        department: "",
-        location: "",
-        type: "",
-        salary: "",
-        description: "",
-        requirements: ""
-      });
-      setIsCreateDialogOpen(false);
-    }
+    setNewJob({
+      title: "",
+      department: "",
+      location: "",
+      type: "",
+      salary: "",
+      description: "",
+      requirements: ""
+    });
+    setIsCreateDialogOpen(false);
   };
 
   const handleEditJob = (job: Job) => {
@@ -449,126 +448,9 @@ export const JobPostings = () => {
                 />
               </PaginationItem>
             </PaginationContent>
-          </Pagination>
+            </Pagination>
         </div>
       )}
-
-      {/* Edit Job Dialog */}
-      {/* <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}> */}
-      {/* <DialogContent className="max-w-md w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl p-4 overflow-y-auto max-h-[90vh]"> */}
-          {/* <DialogHeader>
-            <DialogTitle>Edit Job Posting</DialogTitle>
-          </DialogHeader> */}
-          {/* {editingJob && <div className="space-y-4"> */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
-                <div>
-                  <Label htmlFor="edit-title">Job Title</Label>
-                  <Input
-                    id="edit-title"
-                    value={editingJob.title}
-                    onChange={(e) => setEditingJob({...editingJob, title: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="edit-department">Department</Label>
-                  <Select 
-                    value={editingJob.department} 
-                    onValueChange={(value) => setEditingJob({...editingJob, department: value})}
-                  >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Engineering">Engineering</SelectItem>
-                      <SelectItem value="Product">Product</SelectItem>
-                      <SelectItem value="Design">Design</SelectItem>
-                      <SelectItem value="Marketing">Marketing</SelectItem>
-                      <SelectItem value="Sales">Sales</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-              /* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="edit-location">Location</Label>
-                  <Input
-                    id="edit-location"
-                    value={editingJob.location}
-                    onChange={(e) => setEditingJob({...editingJob, location: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="edit-type">Employment Type</Label>
-                  <Select 
-                    value={editingJob.type} 
-                    onValueChange={(value) => setEditingJob({...editingJob, type: value})}
-                  >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Full-time">Full-time</SelectItem>
-                      <SelectItem value="Part-time">Part-time</SelectItem>
-                      <SelectItem value="Contract">Contract</SelectItem>
-                      <SelectItem value="Internship">Internship</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="edit-salary">Salary Range</Label>
-                <Input
-                  id="edit-salary"
-                  value={editingJob.salary}
-                  onChange={(e) => setEditingJob({...editingJob, salary: e.target.value})}
-                />
-              </div>
-              <div>
-                <Label htmlFor="edit-status">Status</Label>
-                <Select 
-                  value={editingJob.status} 
-                  onValueChange={(value) => setEditingJob({...editingJob, status: value})}
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Active">Active</SelectItem>
-                    <SelectItem value="Draft">Draft</SelectItem>
-                    <SelectItem value="Closed">Closed</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Label htmlFor="edit-description">Job Description</Label>
-                <Textarea
-                  id="edit-description"
-                  value={editingJob.description || ""}
-                  onChange={(e) => setEditingJob({...editingJob, description: e.target.value})}
-                  rows={4}
-                />
-              </div>
-              <div>
-                <Label htmlFor="edit-requirements">Requirements</Label>
-                <Textarea
-                  id="edit-requirements"
-                  value={editingJob.requirements || ""}
-                  onChange={(e) => setEditingJob({...editingJob, requirements: e.target.value})}
-                  rows={4}
-                />
-              </div>
-              <div className="flex space-x-2">
-                <Button onClick={handleUpdateJob} className="flex-1">
-                  Update Job
-                </Button>
-                <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
-                  Cancel
-                </Button>
-              </div>
-            </div>
-          }
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
