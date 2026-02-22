@@ -454,13 +454,13 @@ export const JobPostings = () => {
       )}
 
       {/* Edit Job Dialog */}
-      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-        <DialogContent className="max-w-md w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl p-4 overflow-y-auto max-h-[90vh]">
-          <DialogHeader>
+      {/* <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}> */}
+      {/* <DialogContent className="max-w-md w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl p-4 overflow-y-auto max-h-[90vh]"> */}
+          {/* <DialogHeader>
             <DialogTitle>Edit Job Posting</DialogTitle>
-          </DialogHeader>
-          {editingJob && <div className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          </DialogHeader> */}
+          {/* {editingJob && <div className="space-y-4"> */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
                 <div>
                   <Label htmlFor="edit-title">Job Title</Label>
                   <Input
@@ -488,7 +488,7 @@ export const JobPostings = () => {
                   </Select>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              /* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="edit-location">Location</Label>
                   <Input
