@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Job from '../jobModel.js';
 
-
+const MONGO_URI = 'mongodb+srv://backend:12345@inter.mgnp44y.mongodb.net/Tal?retryWrites=true&w=majority&appName=Inter';
 
 async function deleteAllJobs() {
   await mongoose.connect(MONGO_URI, {
